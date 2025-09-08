@@ -28,8 +28,16 @@ window.addEventListener('click', function(e) {
     updateResult();
 });
 
-
 function findResult(user, computer) {
+    if(win === 5) {
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        }).then(() => {
+            window.reload();
+        })
+    }
     if(user === computer) {
         tie += 1;
     } else if(user === 'Rock' && computer === 'Paper') {
